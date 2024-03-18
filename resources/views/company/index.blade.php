@@ -30,7 +30,7 @@
                         <table class="table table-bordered" id="datatable-crud">
                             <thead>
                                 <tr>
-                                    <th>Id</th>
+                                    <th>No</th>
                                     <th>Name</th>
                                     <th>Email</th>
                                     <th>Addres</th>
@@ -63,8 +63,14 @@
                     { data: 'addres', name: 'addres' },
                     { data: 'department', name: 'department' },                    
                     { data: 'action', name: 'action', orderable: false},
+            //    {
+            //     data: 'action', 
+            //     name: 'action', 
+            //     orderable: true, 
+            //     searchable: true
+            //    }
                 ],
-                order: [[0, 'desc']]
+                order: [[0, 'asc']]
             });
 
             $('body').on('click', '.delete', function () {

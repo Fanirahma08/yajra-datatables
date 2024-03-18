@@ -19,7 +19,7 @@
             <div class="col-lg-12">
                 <div class="card mt-5">
                     <div class="card-body">
-                        <h3 class="my-4">Edit Data Employee<a class="btn btn-danger" href="{{ route('company.index') }}"> Back</a><hr></h3>
+                        <h3 class="my-4">Edit Data Employee &nbsp;&nbsp;<a class="btn btn-danger" href="{{ route('company.index') }}"> Back</a><hr></h3>
                         
                         @if(session('status'))
                             <div class="alert alert-success mb-1 mt-1">
@@ -53,7 +53,7 @@
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
                                     <strong>Addres</strong>
-                                    <input type="text" name="addres" class="form-control" placeholder="Add Addres" value="{{$company->address}}">
+                                    <input type="text" name="addres" class="form-control" placeholder="Add Addres" value="{{$company->addres}}">
                                     @error('addres')
                                     <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                                     @enderror
