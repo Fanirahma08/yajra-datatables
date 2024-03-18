@@ -14,6 +14,7 @@
     <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
 </head>
  
+    <body style="background: lightgray">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-12">
@@ -33,7 +34,7 @@
                         <div class="row">
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
-                                    <strong>Nama Employee</strong>
+                                    <strong>Employee Name</strong>
                                     <input type="text" name="name" class="form-control" placeholder="Add Employee Name" value="{{$company->name}}">
                                     @error('name')
                                     <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
@@ -43,7 +44,7 @@
 
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
-                                    <strong>Email Employee</strong>
+                                    <strong>Employee Email</strong>
                                     <input type="email" name="email" class="form-control" placeholder="Add Email" value="{{$company->email}}">
                                     @error('email')
                                     <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
