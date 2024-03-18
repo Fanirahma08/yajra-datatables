@@ -14,6 +14,7 @@
     <script src="https://cdn.datatables.net/1.11.4/js/dataTables.bootstrap5.min.js"></script>
 </head>
  
+<body style="background: lightgray">
     <div class="container">
         <div class="row justify-content-center">
                 <div class="card mt-5">
