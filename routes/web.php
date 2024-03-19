@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CrudController;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,5 +16,6 @@ use App\Http\Controllers\CrudController;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+Route::get('/company/exportPDF', [CrudController::class, 'exportPDF']);
 Route::resource('company', CrudController::class);
 Route::post('delete-company', [CrudController::class,'destroy']);

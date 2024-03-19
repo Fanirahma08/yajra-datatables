@@ -12,6 +12,7 @@
     <script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://cdn.datatables.net/1.11.4/js/dataTables.bootstrap5.min.js"></script>
+    <script src="{{ asset('js/app.js') }}" type="text/js"></script>
 </head>
  
 <body style="background: lightgray">
@@ -19,8 +20,11 @@
         <div class="row justify-content-center">
                 <div class="card mt-5">
                     <div class="card-body">
-                        <h3 class="my-4">Employee Data &nbsp;&nbsp;<a class="btn btn-success" href="{{ route('company.create') }}">Add Employee</a><hr></h3>
-                        
+                        <h3 class="my-4">Employee Data &nbsp;&nbsp;<a class="btn btn-primary" href="{{ route('company.create') }}">Add Employee</a><hr></h3>
+                         <div class="d-flex justify-content-end mb-4">
+            <a class="btn btn-primary" href="{{ URL::to('/company/exportPDF') }}">Export to PDF</a>
+        </div>
+
                         @if ($message = Session::get('success'))
                             <div class="alert alert-success">
                                 <p>{{ $message }}</p>
@@ -61,12 +65,7 @@
                     { data: 'addres', name: 'addres' },
                     { data: 'department', name: 'department' },                    
                     { data: 'action', name: 'action', orderable: false},
-            //    {
-            //     data: 'action', 
-            //     name: 'action', 
-            //     orderable: true, 
-            //     searchable: true
-            //    }
+
                 ],
                 order: [[0, 'asc']]
             });

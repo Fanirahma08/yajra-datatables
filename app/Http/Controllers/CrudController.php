@@ -1,12 +1,9 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
-
-
 use App\Models\Company;
 use Datatables;
+use PDF;
 
 class CrudController extends Controller
 {
@@ -122,8 +119,22 @@ class CrudController extends Controller
         ->with('success','Data has been updated');
     }
 
+// Generate PDF
+    public function exportPDF() {
 
+    $companies = Company::get();
+      // retreive all records from db
+    //   $company = Company::all();
+      // share data to view
+      $data = [
+        'title' => 'domPDF in Laravel 10',
+        'companies' => $companies
+    ];
+        $pdf = PDF::loadView('company.employee_export', $data);
+        // return $pdf->download('data-employee-pdf');
+        return $pdf->stream();
 
+    }
     /**
     * Remove the specified resource from storage.
     *

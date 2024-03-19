@@ -186,7 +186,7 @@ return [
          * Package Service Providers...
          */
         Yajra\Datatables\DatatablesServiceProvider::class,
-
+        Barryvdh\DomPDF\ServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -213,5 +213,6 @@ return [
         // 'ExampleClass' => App\Example\ExampleClass::class,
     'Datatables' => Yajra\Datatables\Facades\Datatables::class,
         ])->toArray(),
+        'PDF' => Barryvdh\DomPDF\Facade::class,
 
 ];
