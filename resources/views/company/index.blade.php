@@ -137,7 +137,7 @@
                 serverSide: true,
                 ajax: "{{ url('company') }}",
                 columns: [
-                    { data: 'id', name: 'id' },
+                    { data: 'DT_RowIndex', name: 'DT_RowIndex', searchable:false,orderable: false},
                     { data: 'name', name: 'name' },
                     { data: 'email', name: 'email' },
                     { data: 'addres', name: 'addres' },

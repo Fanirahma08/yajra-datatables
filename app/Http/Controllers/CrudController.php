@@ -14,6 +14,7 @@ class CrudController extends Controller
     */
     public function index()
     {
+        
         if(request()->ajax()) {
             return datatables()->of(Company::select('*'))
             ->addColumn('action', 'company.action')
@@ -131,8 +132,9 @@ class CrudController extends Controller
         'companies' => $companies
     ];
         $pdf = PDF::loadView('company.employee_export', $data);
-        // return $pdf->download('data-employee-pdf');
-        return $pdf->stream();
+        // return $pdf->download('data-employee.pdf');
+        $namafile='employee.pdf';
+        return $pdf->stream($namafile);
 
     }
     /**
