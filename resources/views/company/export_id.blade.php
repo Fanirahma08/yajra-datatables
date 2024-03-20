@@ -14,31 +14,25 @@
 			font-size: 12pt;
 		}
 	</style>
-                        <h1 class="my-4">Employee Data<hr></h1>
-                         <div class="d-flex justify-content-end mb-4">
-        </div>
-
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Addres</th>
-                                    <th>Department</th>
-                                </tr>
-                            </thead>
-                <tr>
-                    <th>{{ $companies->id }}</th>
-                    <td>{{ $companies->name }}</td>
-                    <td>{{ $companies->email }}</td>
-                    <td>{{ $companies->addres }}</td>
-                    <td>{{ $companies->department }}</td>
-                </tr>
-                        </table>
-                    </div>
-                </div>
+        
+        <h1 class="my-4"> {{$title}} <hr></h1>
+            <div class="d-flex justify-content-end mb-4"></div>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Addres</th>
+                            <th>Department</th>
+                        </tr>
+                    </thead>
+                        <tr>
+                            <td>{{ $companies->name }}</td>
+                            <td>{{ $companies->email }}</td>
+                            <td>{{ $companies->addres }}</td>
+                            <td>{{ $companies->department }}</td>
+                        </tr>
+                </table>
             </div>
-    </div>
 </body>
 </html>
