@@ -96,15 +96,20 @@ class CrudController extends Controller
     {
         // Get data by id
         $companies = Company::find($id);
+        // dd($companies->email);
         // share data to view
         $data = [
-            'title' => 'domPDF in Laravel 10',
             'companies' => $companies
             ];
         $pdf = PDF::loadView('company.export_id', $data);
-        // return $pdf->download('data-employee.pdf');
-        $namafile='employee.pdf';
-        return $pdf->stream($namafile);
+        
+        // Download PDF
+        // $namefile=$companies->name.'.pdf';
+        // return $pdf->download($namafile);
+
+        $namefile=$companies->name.'.pdf';
+        // dd($namefile);
+        return $pdf->stream($namefile);
     }
 
     /**
@@ -142,13 +147,12 @@ class CrudController extends Controller
         $companies = Company::get();
         // share data to view
         $data = [
-                'title' => 'domPDF in Laravel 10',
                 'companies' => $companies
                 ];
         $pdf = PDF::loadView('company.employee_export', $data);
         // return $pdf->download('data-employee.pdf');
-        $namafile='employee.pdf';
-        return $pdf->stream($namafile);
+        $namefile='employee.pdf';
+        return $pdf->stream($namefile);
     }
 
     /**

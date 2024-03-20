@@ -14,9 +14,7 @@
 			font-size: 12pt;
 		}
 	</style>
-
-    
-                        <h1 class="my-4">Employee Data <hr></h1>
+                        <h1 class="my-4">Employee Data<hr></h1>
                          <div class="d-flex justify-content-end mb-4">
         </div>
 

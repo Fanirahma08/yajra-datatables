@@ -15,22 +15,19 @@
 		}
 	</style>
 
-    
-                        <h1 class="my-4">Employee Data <hr></h1>
-                         <div class="d-flex justify-content-end mb-4">
-        </div>
-
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Addres</th>
-                                    <th>Department</th>
-                                </tr>
-                            </thead>
-                             @foreach($companies ?? '' as $data)
+    <h1 class="my-4">Employee Data <hr></h1>
+    <div class="d-flex justify-content-end mb-4"></div>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Addres</th>
+                    <th>Department</th>
+                </tr>
+            </thead>
+                @foreach($companies as $data)
                 <tr>
                     <th scope="row">{{ $data->id }}</th>
                     <td>{{ $data->name }}</td>
@@ -39,10 +36,7 @@
                     <td>{{ $data->department }}</td>
                 </tr>
                 @endforeach
-                        </table>
-                    </div>
-                </div>
-            </div>
+        </table>
     </div>
 </body>
 </html>
