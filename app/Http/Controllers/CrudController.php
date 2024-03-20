@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Company;
+use Illuminate\View\View;
 use Datatables;
 use PDF;
 
@@ -90,7 +91,28 @@ class CrudController extends Controller
         return view('company.edit',compact('company'));
     }
 
-
+     /**
+    * Update the specified resource in storage.
+    *
+    * @param  \Illuminate\Http\Request  $request
+    * @param  \App\Company  $company
+    * @return \Illuminate\Http\Response
+    */
+    public function exportId($id)
+    {
+        $companies = Company::find($id);
+        //  $companies = Company::get();    
+        //   $company = Company::all();
+        // share data to view
+        $data = [
+            'title' => 'domPDF in Laravel 10',
+            'companies' => $companies
+        ];
+        $pdf = PDF::loadView('company.export_id', $data);
+        // return $pdf->download('data-employee.pdf');
+        $namafile='employee.pdf';
+        return $pdf->stream($namafile);
+    }
 
     /**
     * Update the specified resource in storage.

@@ -17,5 +17,6 @@ use App\Http\Controllers\CrudController;
 //     return view('welcome');
 // });
 Route::get('/company/exportPDF', [CrudController::class, 'exportPDF']);
+Route::get('/company/exportId/{id}', [CrudController::class, 'exportId'])->name('company.export');
 Route::resource('company', CrudController::class);
 Route::post('delete-company', [CrudController::class,'destroy']);

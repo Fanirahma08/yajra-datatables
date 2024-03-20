@@ -30,15 +30,13 @@
                                     <th>Department</th>
                                 </tr>
                             </thead>
-                             @foreach($companies ?? '' as $data)
                 <tr>
-                    <th scope="row">{{ $data->id }}</th>
-                    <td>{{ $data->name }}</td>
-                    <td>{{ $data->email }}</td>
-                    <td>{{ $data->addres }}</td>
-                    <td>{{ $data->department }}</td>
+                    <th>{{ $companies->id }}</th>
+                    <td>{{ $companies->name }}</td>
+                    <td>{{ $companies->email }}</td>
+                    <td>{{ $companies->addres }}</td>
+                    <td>{{ $companies->department }}</td>
                 </tr>
-                @endforeach
                         </table>
                     </div>
                 </div>
