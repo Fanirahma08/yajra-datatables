@@ -27,7 +27,6 @@ class CrudController extends Controller
         return view('company.index');
     }
 
-
     /**
     * Show the form for creating a new resource.
     *
@@ -65,8 +64,6 @@ class CrudController extends Controller
         ->with('success','Data has been saved');
     }
 
-
-
     /**
     * Display the specified resource.
     *
@@ -77,8 +74,6 @@ class CrudController extends Controller
     {
         return view('company.show',compact('company'));
     } 
-
-
 
     /**
     * Show the form for editing the specified resource.
@@ -128,7 +123,7 @@ class CrudController extends Controller
         
         // share data to view
         $data = [
-            'title' =>"Data Detail $companies->name",
+            'title' =>"Data Detail " . $companies->name,
             'companies' => $companies
             ];
         $pdf = PDF::loadView('company.export_id', $data);
