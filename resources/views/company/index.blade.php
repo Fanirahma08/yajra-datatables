@@ -21,7 +21,7 @@
                 <div class="card mt-5">
                     <div class="card-body">
                         <!-- <h3 class="my-4">Employee Data &nbsp;&nbsp;<a class="btn btn-primary" href="{{ route('company.create') }}">Add Employee</a><hr></h3> -->
-                         <h3 class="my-4">Employee Data &nbsp;&nbsp;<a class="btn btn-primary" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Employee</a><hr></h3>
+                         <h3 class="my-4">Employee Data &nbsp;&nbsp;<a class="btn btn-primary" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#ModalAddNewEmployee">Add Employee</a><hr></h3>
                         <div class="d-flex justify-content-end mb-4">
             <a class="btn btn-primary" href="{{ URL::to('/company/exportPDF') }}">Export to PDF</a>
         </div>
@@ -48,7 +48,8 @@
             </div>
     </div>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- Modal New Employee -->
+<div class="modal fade" id="ModalAddNewEmployee" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <form 

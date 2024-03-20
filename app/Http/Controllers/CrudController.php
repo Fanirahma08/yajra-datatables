@@ -91,28 +91,6 @@ class CrudController extends Controller
         return view('company.edit',compact('company'));
     }
 
-     // Generate PDF by id
-    public function exportId($id)
-    {
-        // Get data by id
-        $companies = Company::find($id);
-        // dd($companies->email);
-        // share data to view
-        $data = [
-            'title' =>"Data Detail {$companies->name}",
-            'companies' => $companies
-            ];
-        $pdf = PDF::loadView('company.export_id', $data);
-        
-        // Download PDF
-        // $namefile=$companies->name.'.pdf';
-        // return $pdf->download($namafile);
-
-        $namefile=$companies->name.'.pdf';
-        // dd($namefile);
-        return $pdf->stream($namefile);
-    }
-
     /**
     * Update the specified resource in storage.
     *
@@ -139,6 +117,29 @@ class CrudController extends Controller
 
         return redirect()->route('company.index')
         ->with('success','Data has been updated');
+    }
+
+     // Generate PDF by id
+    public function exportId($id)
+    {
+        // Get data by id
+        $companies = Company::find($id);
+        // dd($companies->email);
+        
+        // share data to view
+        $data = [
+            'title' =>"Data Detail $companies->name",
+            'companies' => $companies
+            ];
+        $pdf = PDF::loadView('company.export_id', $data);
+        
+        // Download PDF
+        // $namefile=$companies->name.'.pdf';
+        // return $pdf->download($namafile);
+
+        $namefile=$companies->name.'.pdf';
+        // dd($namefile);
+        return $pdf->stream($namefile);
     }
 
     // Generate PDF
