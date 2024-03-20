@@ -99,7 +99,7 @@ class CrudController extends Controller
         // dd($companies->email);
         // share data to view
         $data = [
-            'title' =>"Employee Data Detail",
+            'title' =>"Data Detail {$companies->name}",
             'companies' => $companies
             ];
         $pdf = PDF::loadView('company.export_id', $data);

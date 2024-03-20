@@ -31,7 +31,7 @@
                                 <p>{{ $message }}</p>
                             </div>
                         @endif
-                        <table class="table table-bordered" id="datatable-crud">
+                        <table class="table table-bordered" id="datatable-crud" style="width:100%"> 
                             <thead>
                                 <tr>
                                     <th>No</th>
@@ -133,6 +133,7 @@
             });
 
             $('#datatable-crud').DataTable({
+                responsive: true,
                 processing: true,
                 serverSide: true,
                 ajax: "{{ url('company') }}",
