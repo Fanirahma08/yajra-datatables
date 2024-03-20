@@ -91,23 +91,16 @@ class CrudController extends Controller
         return view('company.edit',compact('company'));
     }
 
-     /**
-    * Update the specified resource in storage.
-    *
-    * @param  \Illuminate\Http\Request  $request
-    * @param  \App\Company  $company
-    * @return \Illuminate\Http\Response
-    */
+     // Generate PDF by id
     public function exportId($id)
     {
+        // Get data by id
         $companies = Company::find($id);
-        //  $companies = Company::get();    
-        //   $company = Company::all();
         // share data to view
         $data = [
             'title' => 'domPDF in Laravel 10',
             'companies' => $companies
-        ];
+            ];
         $pdf = PDF::loadView('company.export_id', $data);
         // return $pdf->download('data-employee.pdf');
         $namafile='employee.pdf';
@@ -142,23 +135,22 @@ class CrudController extends Controller
         ->with('success','Data has been updated');
     }
 
-// Generate PDF
-    public function exportPDF() {
-
-    $companies = Company::get();
-      // retreive all records from db
-    //   $company = Company::all();
-      // share data to view
-      $data = [
-        'title' => 'domPDF in Laravel 10',
-        'companies' => $companies
-    ];
+    // Generate PDF
+    public function exportPDF()
+    {
+        // Get All data
+        $companies = Company::get();
+        // share data to view
+        $data = [
+                'title' => 'domPDF in Laravel 10',
+                'companies' => $companies
+                ];
         $pdf = PDF::loadView('company.employee_export', $data);
         // return $pdf->download('data-employee.pdf');
         $namafile='employee.pdf';
         return $pdf->stream($namafile);
-
     }
+
     /**
     * Remove the specified resource from storage.
     *
